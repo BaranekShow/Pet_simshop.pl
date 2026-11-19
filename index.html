@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Shop</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #07130d;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #064e35, #0c2418);
+}
+
+header h1 {
+    color: #63ffad;
+    font-size: 38px;
+    text-shadow: 0 0 20px #00ff88;
+}
+
+header p {
+    color: #c6ffdf;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 14px 25px;
+    background: #10251a;
+    color: white;
+    border: 2px solid #25c875;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.tab.active {
+    background: #19a85c;
+    box-shadow: 0 0 15px #19a85c;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(160deg, #12271b, #09140d);
+    border: 2px solid #25c875;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #16a05a66;
+    border-color: #62ffab;
+}
+
+.gem {
+    font-size: 60px;
+    margin: 15px;
+}
+
+.card h2 {
+    color: #79ffb5;
+}
+
+.description {
+    color: #b8d8c4;
+}
+
+.price {
+    color: #62ffab;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.buy {
+    display: block;
+    background: linear-gradient(135deg, #119b51, #24d477);
+    padding: 13px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.buy:hover {
+    background: #24d477;
+    box-shadow: 0 0 15px #24d477;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #8aaa97;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐾 Pet Shop 🐾</h1>
+    <p>💎 Najlepsze oferty • Szybka obsługa • Discord 💎</p>
+</header>
+
+<!-- ZAKŁADKI -->
+
+<div class="tabs">
+
+    <button class="tab active" onclick="showTab('offers', this)">
+        🛒 Oferty
+    </button>
+
+    <button class="tab" onclick="showTab('buyback', this)">
+        💰 Skup
+    </button>
+
+    <button class="tab" onclick="showTab('soon', this)">
+        📦 Wkrótce
+    </button>
+
+</div>
+
+<div class="container">
+
+    <!-- OFERTY -->
+
+    <section id="offers" class="page active">
+
+        <div class="offers">
+
+            <!-- OFERTA 1 -->
+
+            <div class="card">
+                <div class="gem">💎</div>
+                <h2>1B Diamentów</h2>
+                <p class="description">1 000 000 000 diamentów</p>
+                <div class="price">9 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   🛒 Zamów na Discordzie
+                </a>
+            </div>
+
+            <!-- OFERTA 2 -->
+
+            <div class="card">
+                <div class="gem">💎</div>
+                <h2>100M Diamentów</h2>
+                <p class="description">100 000 000 diamentów</p>
+                <div class="price">1 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   🛒 Zamów na Discordzie
+                </a>
+            </div>
+
+            <!-- OFERTA 3 -->
+
+            <div class="card">
+                <div class="gem">🐾</div>
+                <h2>Huge Pet</h2>
+                <p class="description">Huge Pet – różne modele</p>
+                <div class="price">od 0,35 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   🛒 Zamów na Discordzie
+                </a>
+            </div>
+
+            <!-- OFERTA 4 -->
+
+            <div class="card">
+                <div class="gem">🐉</div>
+                <h2>Titanic</h2>
+                <p class="description">Titanic Pet – różne modele</p>
+                <div class="price">od 45 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   🛒 Zamów na Discordzie
+                </a>
+            </div>
+
+            <!-- OFERTA 5 -->
+
+            <div class="card">
+                <div class="gem">🎁</div>
+                <h2>Mystery Konto</h2>
+                <p class="description">Losowe mystery konto</p>
+                <div class="price">20–50 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   🎁 Zamów na Discordzie
+                </a>
+            </div>
+
+            <!-- OFERTA 6 -->
+
+            <div class="card">
+                <div class="gem">🎁</div>
+                <h2>Mystery Box</h2>
+                <p class="description">Losowy Mystery Box</p>
+                <div class="price">5–25 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   🎁 Zamów na Discordzie
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKUP -->
+<section id="buyback" class="page">
+
+    <div class="offers">
+
+        <!-- SKUP 100M -->
+
+        <div class="card">
+            <div class="gem">💎</div>
+            <h2>Skup 100M Diamentów</h2>
+            <p class="description">100 000 000 diamentów</p>
+            <div class="price">0,50 zł</div>
+
+            <a class="buy"
+               href="https://discord.gg/vETjfDJka"
+               target="_blank"
+               rel="noopener noreferrer">
+               💰 Sprzedaj na Discordzie
+            </a>
+        </div>
+
+        <!-- SKUP 500M -->
+
+        <div class="card">
+            <div class="gem">💎</div>
+            <h2>Skup 500M Diamentów</h2>
+            <p class="description">500 000 000 diamentów</p>
+            <div class="price">3 zł</div>
+
+            <a class="buy"
+               href="https://discord.gg/vETjfDJka"
+               target="_blank"
+               rel="noopener noreferrer">
+               💰 Sprzedaj na Discordzie
+            </a>
+        </div>
+
+    </div>
+
+</section>
+    <section id="buyback" class="page">
+
+        <div class="offers">
+
+            <div class="card">
+                <div class="gem">💎</div>
+                <h2>Skup 500M Diamentów</h2>
+                <p class="description">500 000 000 diamentów</p>
+                <div class="price">3 zł</div>
+
+                <a class="buy"
+                   href="https://discord.gg/vETjfDJka"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   💰 Sprzedaj na Discordzie
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WKRÓTCE -->
+
+    <section id="soon" class="page">
+
+        <div class="card">
+            <div class="gem">📦</div>
+            <h2>Wkrótce!</h2>
+            <p class="description">
+                Nowe oferty pojawią się tutaj.
+            </p>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    🐾 Pet Shop 🐾
+</footer>
+
+<script>
+
+function showTab(tabName, button) {
+
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.querySelectorAll(".tab").forEach(function(tab) {
+        tab.classList.remove("active");
+    });
+
+    document.getElementById(tabName).classList.add("active");
+
+    button.classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
